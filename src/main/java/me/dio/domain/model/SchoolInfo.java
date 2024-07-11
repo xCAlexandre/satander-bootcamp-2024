@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 public class SchoolInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_address")
     private Long id;
     private String grade;
     private String className;

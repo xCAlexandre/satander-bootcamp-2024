@@ -6,17 +6,14 @@ import jakarta.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_student")
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PersonalInfo personalInfo;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private SchoolInfo schoolInfo;
 
-    @OneToOne
-    private Address address;
 
     // Getters and Setters
     public Long getId() {
@@ -39,21 +36,12 @@ public class Student {
         this.schoolInfo = schoolInfo;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", personalInfo=" + personalInfo +
                 ", schoolInfo=" + schoolInfo +
-                ", address=" + address +
                 '}';
     }
 }

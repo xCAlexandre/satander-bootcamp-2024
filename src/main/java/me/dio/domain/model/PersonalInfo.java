@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 @Entity(name = "tb_personal_info")
 public class PersonalInfo {
     @Id
-    @GeneratedValue
-    @Column(name = "id_personal_info")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "personal_info_id")
     private Long id;
 
     @Column(length = 50, nullable = false)
